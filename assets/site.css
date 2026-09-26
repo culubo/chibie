@@ -86,6 +86,14 @@ h3 { font-size:17px; line-height:1.2; }
   .fact + .fact { border-top:1px solid var(--line); }
 }
 
+/* dark mode: the sprout drawings have dark outlines, so sit them on a light chip */
+@media (prefers-color-scheme: dark) {
+  .why img, .varieties summary img, .hello .face img { background:#e9eee0; border-radius:10px; padding:4px; box-sizing:content-box; }
+  .varieties summary img { height:24px; width:28px; }
+  .mix .stack img { background:#e9eee0; border-color:#e9eee0; }
+  .brand img, .cta .grow { filter:brightness(1.35) saturate(1.1); }
+}
+
 /* why microgreens */
 .why { display:grid; grid-template-columns:repeat(4, 1fr); gap:28px; }
 .why img { height:34px; width:auto; margin-bottom:10px; }

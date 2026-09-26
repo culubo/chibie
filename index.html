@@ -4,7 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>chibie · microgreens</title>
-<meta name="description" content="chibie: small-batch microgreens grown indoors near Boston. Not for sale yet; first harvest late October.">
+<meta name="description" content="Making vitamin intake easier with fresh, locally grown microgreens near Boston. First harvest late October.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="chibie">
+<meta property="og:title" content="chibie · microgreens">
+<meta property="og:description" content="Making vitamin intake easier with fresh, locally grown microgreens near Boston. First harvest late October.">
+<meta property="og:url" content="https://green.culubo.org/">
+<meta property="og:image" content="https://green.culubo.org/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#3f7d2c">
 <link rel="icon" type="image/gif" href="favicon.gif">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,8 +23,8 @@
 <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
-  <div class="marquee" role="note" aria-label="This project is currently pre-launch. We plan to receive our seeds the first week of October.">
-    <div class="track"><div class="run"><span>This project is currently pre-launch. We plan to receive our seeds the first week of October. <a href="survey.html">Take our survey →</a></span><i aria-hidden="true">✿</i><span>This project is currently pre-launch. We plan to receive our seeds the first week of October. <a href="survey.html">Take our survey →</a></span><i aria-hidden="true">✿</i><span>This project is currently pre-launch. We plan to receive our seeds the first week of October. <a href="survey.html">Take our survey →</a></span><i aria-hidden="true">✿</i></div><div class="run" aria-hidden="true"><span>This project is currently pre-launch. We plan to receive our seeds the first week of October. <a href="survey.html">Take our survey →</a></span><i aria-hidden="true">✿</i><span>This project is currently pre-launch. We plan to receive our seeds the first week of October. <a href="survey.html">Take our survey →</a></span><i aria-hidden="true">✿</i><span>This project is currently pre-launch. We plan to receive our seeds the first week of October. <a href="survey.html">Take our survey →</a></span><i aria-hidden="true">✿</i></div></div>
+  <div class="marquee" id="marquee" role="note" aria-label="This project is currently pre-launch. I plan to receive my seeds the first week of October.">
+    <div class="track"><div class="run"><span>This project is currently pre-launch. I plan to receive my seeds the first week of October. <a href="survey.html">Take the survey →</a></span><i aria-hidden="true">✿</i><span>This project is currently pre-launch. I plan to receive my seeds the first week of October. <a href="survey.html">Take the survey →</a></span><i aria-hidden="true">✿</i><span>This project is currently pre-launch. I plan to receive my seeds the first week of October. <a href="survey.html">Take the survey →</a></span><i aria-hidden="true">✿</i></div><div class="run" aria-hidden="true"><span>This project is currently pre-launch. I plan to receive my seeds the first week of October. <a href="survey.html">Take the survey →</a></span><i aria-hidden="true">✿</i><span>This project is currently pre-launch. I plan to receive my seeds the first week of October. <a href="survey.html">Take the survey →</a></span><i aria-hidden="true">✿</i><span>This project is currently pre-launch. I plan to receive my seeds the first week of October. <a href="survey.html">Take the survey →</a></span><i aria-hidden="true">✿</i></div></div>
   </div>
   <nav class="nav">
     <div class="wrap">
@@ -69,7 +79,7 @@
 
     <section class="section" id="growing">
       <div class="section-head reveal">
-        <h2>What we're growing</h2>
+        <h2>What I'm growing</h2>
         <p class="muted small">Tap a green for taste, grow time and price</p>
       </div>
       <div class="varieties reveal" id="varieties">
@@ -136,7 +146,7 @@
           <button class="btn primary" type="submit">Sign up</button>
         </form>
         <p class="muted small" id="news-note" style="margin-top:8px"></p>
-        <p class="pickup"><b>Pickup, once we're selling</b>Saturdays, by appointment. Tell us when you're free and we'll meet you then.</p>
+        <p class="pickup"><b>Pickup, once I'm selling</b>Saturdays, by appointment. Tell me when you're free and I'll meet you then.</p>
       </div>
     </section>
 
@@ -178,6 +188,21 @@
     </div>
   </footer>
 
+<script>
+  // Banner message follows the calendar, so it never goes stale. Edit the dates or wording here.
+  (function () {
+    var steps = [
+      ['2026-10-06', 'Seeds are in and the first trays are planted. First harvest in about two weeks.', '#updates', 'Get stock updates →'],
+      ['2026-10-17', 'The first greens are almost ready. Stock-update subscribers hear first.', '#updates', 'Get stock updates →'],
+      ['2026-11-01', 'Saturday pickups are starting soon. Sign up to hear what\'s ready each week.', '#updates', 'Get stock updates →']
+    ], now = new Date(), pick = null;
+    steps.forEach(function (st) { if (new Date(st[0] + 'T00:00') <= now) pick = st; });
+    if (!pick) return;
+    var bar = document.getElementById('marquee'), item = '<span>' + pick[1] + ' <a href="' + pick[2] + '">' + pick[3] + '</a></span><i aria-hidden="true">✿</i>';
+    bar.setAttribute('aria-label', pick[1]);
+    bar.querySelectorAll('.run').forEach(function (r) { r.innerHTML = item + item + item; });
+  })();
+</script>
 <script src="assets/site.js"></script>
 <script>
   var FORMSPREE = 'https://formspree.io/f/xrpbyjld';
@@ -191,7 +216,7 @@
     e.preventDefault();
     var f = e.target, btn = f.querySelector('button'), note = document.getElementById('news-note');
     btn.disabled = true;
-    send(f, function () { f.hidden = true; note.textContent = "You're on the list. We'll email you when greens are ready."; },
+    send(f, function () { f.hidden = true; note.textContent = "You're on the list. I'll email you when greens are ready."; },
             function () { btn.disabled = false; note.textContent = "Couldn't sign you up. Please try again."; });
   });
 
