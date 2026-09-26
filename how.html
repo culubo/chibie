@@ -10,23 +10,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..400,100,0;1,9..144,300..400,100,0&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
 <style>
-  .page-head { padding:40px 0 8px; }
-  .page-head h1 { font-weight:300; font-size:48px; line-height:1.05; font-variation-settings:'opsz' 144, 'SOFT' 100, 'WONK' 0; }
-  .page-head p { font-size:17px; margin-top:10px; max-width:560px; }
-  .panel { padding:26px; }
-  .panel h2 { margin-bottom:12px; }
-  .specs { list-style:none; padding:0; }
-  .specs li { display:flex; justify-content:space-between; gap:16px; padding:9px 0; border-bottom:1px solid var(--line); font-size:14px; }
-  .specs li:last-child { border-bottom:0; }
-  .specs li span:first-child { color:var(--muted); }
-  .specs li span:last-child { text-align:right; }
-  #tray { display:block; width:100%; height:300px; cursor:grab; touch-action:pan-y; }
-  .money { display:grid; grid-template-columns:repeat(3, 1fr); gap:10px; margin-top:6px; }
-  .money div { background:var(--tint); border-radius:12px; padding:14px; }
-  .money b { display:block; font:300 30px/1.1 'Fraunces', Georgia, serif; font-variation-settings:'opsz' 144, 'SOFT' 100, 'WONK' 0; color:var(--accent); }
-  .money .neg b { color:var(--neg); }
-  .money span { font-size:13px; color:var(--muted); }
-  .stack { display:grid; gap:14px; }
+  .page-head { padding:40px 0 0; }
+  .page-head h1 { font-weight:300; font-size:44px; line-height:1.05; font-variation-settings:'opsz' 144, 'SOFT' 100, 'WONK' 0; }
+  .page-head p { font-size:16px; margin-top:10px; max-width:560px; }
+  .strip { margin-top:28px; height:160px; border-radius:22px; background:url(assets/leaves.webp) center 40% / cover; }
+  #tray { display:block; width:100%; height:320px; cursor:grab; touch-action:pan-y; }
+  .money .big.neg { color:var(--neg); }
+  @media (max-width:760px) { .page-head h1 { font-size:34px; } .strip { height:110px; } }
 </style>
 <script>document.documentElement.classList.add('js');</script>
 </head>
@@ -47,30 +37,33 @@
     <header class="page-head reveal">
       <h1>How it's grown</h1>
       <p class="muted">The behind-the-scenes version: where the seeds come from, the trays I designed, and what it's cost so far.</p>
+      <div class="strip" role="img" aria-label="Illustration of microgreen leaves"></div>
     </header>
 
-    <section class="section" style="padding-top:24px">
+    <section class="section">
+      <h2 class="reveal">The setup</h2>
+      <div class="why">
+        <div class="reveal"><img src="assets/sprout-5.png" alt=""><h3>Indoors near Boston</h3><p>Zone 6, so growing inside keeps it going year-round, whatever the weather.</p></div>
+        <div class="reveal" style="--d:.06s"><img src="assets/sprout-3.png" alt=""><h3>Coco coir</h3><p>A clean fiber from coconut husks instead of soil. <a href="https://www.amazon.com/dp/B0BCYMMBR1">The one I use</a>.</p></div>
+        <div class="reveal" style="--d:.12s"><img src="assets/sprout-1.png" alt=""><h3>True Leaf Market seeds</h3><p>Microgreen seed bought fresh for each batch.</p></div>
+        <div class="reveal" style="--d:.18s"><img src="assets/sprout-6.png" alt=""><h3>No pesticides</h3><p>Nothing sprayed. Cut above the root 8–24 days after planting.</p></div>
+      </div>
+    </section>
+
+    <section class="section">
       <div class="two">
-        <div class="panel card reveal">
-          <h2>The setup</h2>
-          <ul class="specs">
-            <li><span>Where</span><span>Indoors, near Boston (zone 6)</span></li>
-            <li><span>Growing medium</span><span><a href="https://www.amazon.com/dp/B0BCYMMBR1">Coco coir</a></span></li>
-            <li><span>Seeds</span><span>True Leaf Market</span></li>
-            <li><span>Pesticides</span><span>None</span></li>
-            <li><span>Harvest</span><span>Cut above the root, 8–24 days after planting</span></li>
+        <div class="reveal">
+          <h2>What's in them</h2>
+          <ul class="plain">
+            <li><span>Vitamin A</span><span>vision and immunity</span></li>
+            <li><span>Vitamin C</span><span>immunity</span></li>
+            <li><span>Vitamin K</span><span>blood clotting and bones</span></li>
+            <li><span>Quercetin, sulforaphane</span><span>antioxidant compounds</span></li>
           </ul>
         </div>
-        <div class="panel card reveal" style="--d:.08s">
-          <h2>What's in them</h2>
-          <ul class="specs">
-            <li><span>Vitamin A</span><span>Vision and immunity</span></li>
-            <li><span>Vitamin C</span><span>Immunity</span></li>
-            <li><span>Vitamin K</span><span>Blood clotting and bones</span></li>
-            <li><span>Quercetin, sulforaphane</span><span>Antioxidant compounds</span></li>
-          </ul>
-          <h3 style="margin:18px 0 4px">By variety</h3>
-          <ul class="specs">
+        <div class="reveal" style="--d:.08s">
+          <h2>By variety</h2>
+          <ul class="plain">
             <li><span>Broccoli</span><span>A, C, K · sulforaphane</span></li>
             <li><span>Mustard (komatsuna)</span><span>A, C, K · calcium</span></li>
             <li><span>Pak choi</span><span>A, C, K · calcium, folate</span></li>
@@ -84,31 +77,32 @@
     </section>
 
     <section class="section">
-      <div class="two">
-        <div class="panel card reveal">
-          <h2>The trays</h2>
+      <div class="two" style="align-items:center">
+        <div class="reveal">
           <canvas id="tray" aria-label="3D model of one tray module: reservoir, perforated insert and germination cover"></canvas>
           <p class="muted small" style="text-align:center">Drag to rotate</p>
         </div>
-        <div class="stack">
-          <div class="panel card reveal" style="--d:.08s">
-            <h2>Designed and 3D-printed</h2>
-            <ul class="specs">
-              <li><span>Material</span><span>PETG, printed in 8-inch modules</span></li>
-              <li><span>Layers</span><span>Water reservoir, perforated growing insert, blackout cover</span></li>
-              <li><span>Long tray</span><span>40 × 7 × 2.5 in (5 modules)</span></li>
-              <li><span>Short tray</span><span>24 × 4.5 × 2.5 in (3 modules)</span></li>
-            </ul>
-          </div>
-          <div class="panel card reveal" style="--d:.16s">
-            <h2>Costs &amp; profit</h2>
-            <div class="money">
-              <div><b>$81.99</b><span>spent: seeds $58, coir $11.99, PETG $12</span></div>
-              <div><b>$0</b><span>sales so far</span></div>
-              <div class="neg"><b>−$81.99</b><span>net</span></div>
-            </div>
-          </div>
+        <div class="reveal" style="--d:.08s">
+          <h2>The trays</h2>
+          <p class="muted" style="margin-bottom:14px">Designed and 3D-printed myself, in stackable 8-inch modules.</p>
+          <ul class="plain">
+            <li><span>Material</span><span>PETG</span></li>
+            <li><span>Bottom</span><span>water reservoir</span></li>
+            <li><span>Middle</span><span>perforated growing insert</span></li>
+            <li><span>Top</span><span>blackout cover for germination</span></li>
+            <li><span>Long tray</span><span>40 × 7 × 2.5 in (5 modules)</span></li>
+            <li><span>Short tray</span><span>24 × 4.5 × 2.5 in (3 modules)</span></li>
+          </ul>
         </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="reveal">Costs &amp; profit</h2>
+      <div class="facts money reveal">
+        <div class="fact"><div class="big">$81.99</div><p>spent so far: seeds $58, coco coir $11.99, PETG $12</p></div>
+        <div class="fact"><div class="big">$0</div><p>in sales (nothing is for sale yet)</p></div>
+        <div class="fact"><div class="big neg">−$81.99</div><p>net, for now</p></div>
       </div>
     </section>
   </main>

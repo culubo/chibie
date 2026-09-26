@@ -142,6 +142,11 @@ h3 { font-size:17px; line-height:1.2; }
 .picks-send { display:flex; align-items:center; gap:14px; margin-top:14px; flex-wrap:wrap; }
 .picks-send .btn:disabled { opacity:.4; cursor:default; }
 
+/* plain two-column list */
+.plain { list-style:none; padding:0; border-top:1px solid var(--line); }
+.plain li { display:flex; justify-content:space-between; gap:16px; padding:9px 0; border-bottom:1px solid var(--line); font-size:14px; }
+.plain li span:last-child { color:var(--muted); text-align:right; }
+
 /* two columns */
 .two { display:grid; grid-template-columns:1fr 1fr; gap:40px; }
 @media (max-width:760px) { .two { grid-template-columns:1fr; gap:32px; } }
