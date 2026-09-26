@@ -51,6 +51,11 @@
   .cols h2::before { width:163px; height:35px; margin:0 0 18px; background:url(assets/sprouts-strip.png) left center/auto 35px no-repeat; }
   #tray { display:block; width:100%; height:260px; cursor:grab; touch-action:pan-y; }
   .foot { margin-top:32px; }
+  .news { display:flex; gap:8px; margin-top:6px; }
+  .news input { flex:1; min-width:0; font:inherit; color:inherit; background:transparent; border:1px solid var(--line); border-radius:6px; padding:7px 10px; }
+  .news input:focus { outline:2px solid var(--accent); outline-offset:-1px; border-color:transparent; }
+  .news button { font:inherit; font-weight:600; color:var(--bg); background:var(--accent); border:0; border-radius:999px; padding:7px 16px; cursor:pointer; }
+  .news button:disabled { opacity:.5; cursor:default; }
   ul { list-style:none; padding:0; }
   li { display:flex; justify-content:space-between; align-items:baseline; gap:12px; padding:6px 0; border-bottom:1px solid var(--line); }
   li span:last-child { color:var(--muted); font-variant-numeric:tabular-nums; }
@@ -94,6 +99,14 @@
   <ul>
     <li><span>Saturdays, by appointment. Tell us when you're free when you order, and we'll meet you then.</span></li>
   </ul>
+  <h2>Stock updates</h2>
+  <form class="news" id="news">
+    <input type="hidden" name="type" value="newsletter">
+    <input type="hidden" name="_subject" value="New stock updates signup">
+    <input type="email" name="email" placeholder="you@example.com" autocomplete="email" required aria-label="Email">
+    <button type="submit">Sign up</button>
+  </form>
+  <p id="news-note">What's growing and when it's ready. Unsubscribe anytime.</p>
   </section>
   <section>
   <h2>Why ours</h2>
@@ -140,6 +153,17 @@
   </ul>
   </section>
   <p class="foot"><a href="survey.html">Take our 1-minute survey</a> · <a href="privacy.html">Privacy policy</a></p>
+<script>
+  // Stock-updates signup goes to the same Formspree form as the survey, tagged type=newsletter.
+  document.getElementById('news').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var f = e.target, btn = f.querySelector('button'), note = document.getElementById('news-note');
+    btn.disabled = true;
+    fetch('https://formspree.io/f/xrpbyjld', { method: 'POST', body: new FormData(f), headers: { Accept: 'application/json' } })
+      .then(function (r) { if (!r.ok) throw 0; f.hidden = true; note.textContent = "You're on the list. We'll email you when greens are ready."; })
+      .catch(function () { btn.disabled = false; note.textContent = "Couldn't sign you up. Please try again."; });
+  });
+</script>
 <script>
 (function () {
   var canvas = document.getElementById('tray');
