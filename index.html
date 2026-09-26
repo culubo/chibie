@@ -50,7 +50,12 @@
   .cols h2, .soon h2 { margin-top:32px; }
   .cols h2::before { width:163px; height:35px; margin:0 0 18px; background:url(assets/sprouts-strip.png) left center/auto 35px no-repeat; }
   #tray { display:block; width:100%; height:260px; cursor:grab; touch-action:pan-y; }
-  .foot { margin-top:32px; }
+  .foot { margin-top:16px; }
+  /* survey box with the sprout drawing growing out of its top edge, like the posters */
+  .cta { position:relative; margin-top:64px; border:1.5px solid var(--accent); border-radius:14px; padding:22px 20px 18px; }
+  .cta-sprouts { position:absolute; left:18px; bottom:100%; margin-bottom:-2px; height:44px; width:auto; }
+  .cta h2 { margin:0 0 4px; }
+  .cta p { color:var(--fg); font-size:14px; padding:0; }
   .news { display:flex; gap:8px; margin-top:6px; }
   .news input { flex:1; min-width:0; font:inherit; color:inherit; background:transparent; border:1px solid var(--line); border-radius:6px; padding:7px 10px; }
   .news input:focus { outline:2px solid var(--accent); outline-offset:-1px; border-color:transparent; }
@@ -178,7 +183,12 @@
     <li><span>Fennel</span><small>rare</small></li>
   </ul>
   </section>
-  <p class="foot"><a href="survey.html">Take our 1-minute survey</a> · <a href="privacy.html">Privacy policy</a></p>
+  <div class="cta">
+    <img class="cta-sprouts" src="assets/sprouts-strip.png" alt="" width="418" height="90">
+    <h2>Interested?</h2>
+    <p>Tell me what you'd want in the <a href="survey.html">1-minute survey</a>. No signup needed.</p>
+  </div>
+  <p class="foot"><a href="privacy.html">Privacy policy</a></p>
 <script>
   // Stock-updates signup goes to the same Formspree form as the survey, tagged type=newsletter.
   document.getElementById('news').addEventListener('submit', function (e) {
