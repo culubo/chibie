@@ -9,9 +9,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..400,100,0&display=swap" rel="stylesheet">
 <style>
-  :root { --fg:#1c1f1a; --muted:#6b7064; --line:#e3e5df; --bg:#fbfbf8; --accent:#3f7d2c; }
+  :root { --fg:#1c1f1a; --muted:#6b7064; --line:#e3e5df; --bg:#fbfbf8; --accent:#3f7d2c; --tint:#eaf2e4; }
   @media (prefers-color-scheme: dark) {
-    :root { --fg:#e8eae4; --muted:#9a9f93; --line:#2c2f29; --bg:#141612; --accent:#8cc46f; }
+    :root { --fg:#e8eae4; --muted:#9a9f93; --line:#2c2f29; --bg:#141612; --accent:#8cc46f; --tint:#1f2a1a; }
   }
   * { box-sizing:border-box; margin:0; }
   body { font:14px/1.4 system-ui,sans-serif; color:var(--fg); background:var(--bg); max-width:420px; margin:0 auto; padding:24px 16px; }
@@ -56,6 +56,13 @@
   .news input:focus { outline:2px solid var(--accent); outline-offset:-1px; border-color:transparent; }
   .news button { font:inherit; font-weight:600; color:var(--bg); background:var(--accent); border:0; border-radius:999px; padding:7px 16px; cursor:pointer; }
   .news button:disabled { opacity:.5; cursor:default; }
+  .notice { background:var(--tint); color:var(--fg); border-radius:8px; padding:10px 14px; margin-bottom:20px; font-size:14px; padding-top:10px; }
+  .notice b { color:var(--accent); }
+  .hello { margin-bottom:8px; }
+  .hello .intro + .intro { margin-top:8px; }
+  .tl li { justify-content:flex-start; }
+  .tl li b { flex:none; width:84px; font-weight:600; color:var(--accent); }
+  .tl li span:last-child { color:var(--fg); }
   ul { list-style:none; padding:0; }
   li { display:flex; justify-content:space-between; align-items:baseline; gap:12px; padding:6px 0; border-bottom:1px solid var(--line); }
   li span:last-child { color:var(--muted); font-variant-numeric:tabular-nums; }
@@ -63,6 +70,7 @@
 </head>
 <body>
   <header><h1>chibie</h1><span class="tagline">microgreens</span><img class="sprouts" src="assets/sprouts.webp" alt="" width="2000" height="837"></header>
+  <p class="notice"><b>Nothing is for sale yet.</b> Seeds arrive <span style="white-space:nowrap">October 6–8</span> and need a few weeks to grow. Right now I'm just seeing who's interested: take the <a href="survey.html">1-minute survey</a> or sign up for stock updates below.</p>
   <div class="about">
     <div>
       <h2>What are microgreens?</h2>
@@ -72,6 +80,24 @@
       <img src="assets/sandwich.webp" alt="Sandwich topped with microgreens" width="738" height="646">
       <img src="assets/toast.webp" alt="Toast with egg and microgreens" width="1203" height="765">
     </div>
+  </div>
+  <div class="cols hello">
+  <section>
+  <h2>Hi, I'm the grower</h2>
+  <p class="intro">I'm a senior studying computer science at Boston University, growing microgreens on the side. I care about eating well in a way that's about more than macros: food that's fresh, colorful and actually tastes good. chibie is my small experiment in making that easy for students and neighbors around Boston.</p>
+  <p class="intro">If you're curious, want to help grow, or just want to see how it works, I'd love to hear from you. Say so in the <a href="survey.html">survey</a> or email <a href="mailto:sealu@culubo.org">sealu@culubo.org</a>.</p>
+  </section>
+  <section>
+  <h2>Timeline</h2>
+  <ul class="tl">
+    <li><b>Now</b><span>Seeing who's interested: survey and stock-update signups</span></li>
+    <li><b>Oct 6–8</b><span>Seeds arrive, first trays planted</span></li>
+    <li><b>~Oct 17–21</b><span>First fast greens ready: broccoli, komatsuna, pak choi</span></li>
+    <li><b>Late Oct</b><span>Slower herbs ready: cilantro, Thai basil, onion, garlic chives</span></li>
+    <li><b>After that</b><span>First Saturday pickups, announced to the stock-updates list</span></li>
+  </ul>
+  <p>Dates are estimates. Plants keep their own schedule.</p>
+  </section>
   </div>
   <div class="cols">
   <section>
@@ -97,7 +123,7 @@
   </ul>
   <h2>Pickup</h2>
   <ul>
-    <li><span>Saturdays, by appointment. Tell us when you're free when you order, and we'll meet you then.</span></li>
+    <li><span>Once we're selling: Saturdays, by appointment. Tell us when you're free when you order, and we'll meet you then.</span></li>
   </ul>
   <h2>Stock updates</h2>
   <form class="news" id="news">
