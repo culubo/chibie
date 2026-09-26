@@ -4,191 +4,194 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>chibie · microgreens</title>
+<meta name="description" content="chibie: small-batch microgreens grown indoors near Boston. Not for sale yet; first harvest late October.">
 <link rel="icon" type="image/gif" href="favicon.gif">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..400,100,0&display=swap" rel="stylesheet">
-<style>
-  :root { --fg:#1c1f1a; --muted:#6b7064; --line:#e3e5df; --bg:#fbfbf8; --accent:#3f7d2c; --tint:#eaf2e4; }
-  @media (prefers-color-scheme: dark) {
-    :root { --fg:#e8eae4; --muted:#9a9f93; --line:#2c2f29; --bg:#141612; --accent:#8cc46f; --tint:#1f2a1a; }
-  }
-  * { box-sizing:border-box; margin:0; }
-  body { font:14px/1.4 system-ui,sans-serif; color:var(--fg); background:var(--bg); max-width:420px; margin:0 auto; padding:24px 16px; }
-  h1 { font:300 26px/1.1 'Fraunces', Georgia, serif; font-variation-settings:'opsz' 144, 'SOFT' 100, 'WONK' 0; color:var(--accent); margin-bottom:12px; }
-  h2 { font:400 18px/1.2 'Fraunces', Georgia, serif; font-variation-settings:'SOFT' 100, 'WONK' 0; color:var(--accent); margin:20px 0 6px; }
-  a { color:inherit; }
-  small { color:var(--muted); font-size:12px; margin-left:4px; }
-  p { color:var(--muted); font-size:12px; padding-top:6px; }
-  b { font-weight:600; }
-  .neg { color:#b3402a; }
-  .cols h2:first-child { margin-top:0; }
-  .cols section + section { margin-top:20px; }
-  @media (min-width:760px) {
-    body { max-width:880px; }
-    .cols { display:grid; grid-template-columns:1fr 1fr; gap:40px; }
-    .cols section + section { margin-top:0; }
-  }
-  .soon { margin-top:20px; }
-  .soon ul { display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); column-gap:24px; opacity:.45; }
-  .soon ul li span { color:var(--fg); }
-  .intro { color:var(--fg); font-size:14px; padding-top:0; margin-bottom:20px; max-width:640px; }
-  header { display:flex; align-items:center; gap:12px; margin-bottom:12px; }
-  header h1 { margin:0; }
-  .tagline { color:var(--muted); font-size:13px; align-self:flex-end; margin:0 4px 4px -4px; }
-  .sprouts { height:40px; width:auto; aspect-ratio:1720/370; object-fit:cover; }
-  .about { display:grid; gap:16px; margin-bottom:24px; }
-  .about .intro { margin-bottom:0; }
-  .about h2 { margin-top:0; }
-  .art { display:flex; gap:12px; align-items:center; }
-  .art img { width:50%; max-width:170px; height:auto; }
-  @media (min-width:760px) {
-    .about { grid-template-columns:1fr auto; align-items:center; gap:32px; }
-    .art img { width:150px; }
-  }
-  .cols h2::before, .soon h2::before { content:""; display:block; width:100%; height:32px; margin:0 auto 18px; background:url(assets/sprouts-strip.png) center/auto 32px repeat-x; background-repeat:round no-repeat; }
-  .cols h2, .soon h2 { margin-top:32px; }
-  .cols h2::before { width:163px; height:35px; margin:0 0 18px; background:url(assets/sprouts-strip.png) left center/auto 35px no-repeat; }
-  #tray { display:block; width:100%; height:260px; cursor:grab; touch-action:pan-y; }
-  .foot { margin-top:16px; }
-  /* survey box with the sprout drawing growing out of its top edge, like the posters */
-  .cta { position:relative; margin-top:64px; border:1.5px solid var(--accent); border-radius:14px; padding:22px 20px 18px; }
-  .cta-sprouts { position:absolute; left:18px; bottom:100%; margin-bottom:-2px; height:44px; width:auto; }
-  .cta h2 { margin:0 0 4px; }
-  .cta p { color:var(--fg); font-size:14px; padding:0; }
-  .news { display:flex; gap:8px; margin-top:6px; }
-  .news input { flex:1; min-width:0; font:inherit; color:inherit; background:transparent; border:1px solid var(--line); border-radius:6px; padding:7px 10px; }
-  .news input:focus { outline:2px solid var(--accent); outline-offset:-1px; border-color:transparent; }
-  .news button { font:inherit; font-weight:600; color:var(--bg); background:var(--accent); border:0; border-radius:999px; padding:7px 16px; cursor:pointer; }
-  .news button:disabled { opacity:.5; cursor:default; }
-  .notice { background:var(--tint); color:var(--fg); border-radius:8px; padding:10px 14px; margin-bottom:20px; font-size:14px; padding-top:10px; }
-  .notice b { color:var(--accent); }
-  .hello { margin-bottom:8px; }
-  .hello .intro + .intro { margin-top:8px; }
-  .tl li { justify-content:flex-start; }
-  .tl li b { flex:none; width:84px; font-weight:600; color:var(--accent); }
-  .tl li span:last-child { color:var(--fg); }
-  ul { list-style:none; padding:0; }
-  li { display:flex; justify-content:space-between; align-items:baseline; gap:12px; padding:6px 0; border-bottom:1px solid var(--line); }
-  li span:last-child { color:var(--muted); font-variant-numeric:tabular-nums; }
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..400,100,0;1,9..144,300..400,100,0&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
-  <header><h1>chibie</h1><span class="tagline">microgreens</span><img class="sprouts" src="assets/sprouts.webp" alt="" width="2000" height="837"></header>
-  <p class="notice"><b>Nothing is for sale yet.</b> Seeds arrive <span style="white-space:nowrap">October 6–8</span> and need a few weeks to grow. Right now I'm just seeing who's interested: take the <a href="survey.html">1-minute survey</a> or sign up for stock updates below.</p>
-  <div class="about">
-    <div>
-      <h2>What are microgreens?</h2>
-      <p class="intro">Young vegetable and herb plants, cut about 1–3½ weeks after planting, once their first leaves open. Unlike sprouts, they grow in a growing medium and are cut above the root, so you eat just the stem and leaves. Use them on salads, sandwiches, bowls or eggs.</p>
+  <nav class="nav">
+    <div class="wrap">
+      <a class="brand" href="#top"><b>chibie</b><span>microgreens</span><img src="assets/sprouts-strip.png" alt=""></a>
+      <div class="links">
+        <a href="#growing">Growing</a>
+        <a href="#about">About</a>
+        <a href="how.html">How it's grown</a>
+        <a class="btn primary sm" href="survey.html">Survey</a>
+      </div>
     </div>
-    <div class="art">
-      <img src="assets/sandwich.webp" alt="Sandwich topped with microgreens" width="738" height="646">
-      <img src="assets/toast.webp" alt="Toast with egg and microgreens" width="1203" height="765">
+  </nav>
+
+  <main class="wrap" id="top">
+    <section class="hero card pattern reveal">
+      <div>
+        <span class="chip"><i></i>Not for sale yet · first harvest late October</span>
+        <h1>Tiny greens, grown <em>near Boston.</em></h1>
+        <p>chibie is a small microgreens project by a BU student: fresh, colorful greens that make everyday food taste better. Right now I'm seeing who's interested.</p>
+        <div class="actions">
+          <a class="btn primary" href="survey.html">Take the 1-minute survey</a>
+          <a class="btn ghost" href="#updates">Get stock updates</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="blob"></div>
+        <img class="sandwich" src="assets/sandwich.webp" alt="" width="738" height="646">
+        <img class="toast" src="assets/toast.webp" alt="" width="1203" height="765">
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="facts">
+        <div class="fact card reveal">
+          <h3>What are microgreens?</h3>
+          <p>Young vegetable and herb plants, cut 1–3½ weeks after planting, once their first leaves open. Unlike sprouts, they grow in a growing medium and are cut above the root, so you eat just the stem and leaves.</p>
+        </div>
+        <div class="fact card reveal" style="--d:.08s">
+          <div class="big">4–40×</div>
+          <p>By weight, microgreens can hold 4–40 times the vitamins of the grown plant.</p>
+          <p class="src muted"><a href="https://pubmed.ncbi.nlm.nih.gov/22812633/">USDA study, 2012</a></p>
+        </div>
+        <div class="fact card reveal" style="--d:.16s">
+          <div class="big">7%</div>
+          <p>Only 7% of adults 18–30 eat enough vegetables. A handful on your sandwich, ramen or eggs helps.</p>
+          <p class="src muted"><a href="https://www.cdc.gov/mmwr/volumes/71/wr/mm7101a1.htm">CDC, 2019</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="growing">
+      <div class="section-head reveal">
+        <h2>What we're growing</h2>
+        <p class="muted">Planned at $5 per 2 oz. Ready from late October. Grown indoors in coco coir with no pesticides.</p>
+      </div>
+      <div class="grid">
+        <article class="product card reveal">
+          <div class="icon"><img src="assets/sprout-1.png" alt=""></div>
+          <div class="row"><h3>Broccoli</h3><span class="tag mild">Mild</span></div>
+          <p class="variety">Calabrese</p>
+          <p class="meta">8–12 days · A, C, K · sulforaphane</p>
+          <div class="foot"><span class="price">$5 <small>/ 2 oz</small></span><span class="muted">Late Oct</span></div>
+        </article>
+        <article class="product card reveal" style="--d:.05s">
+          <div class="icon"><img src="assets/sprout-3.png" alt=""></div>
+          <div class="row"><h3>Mustard</h3><span class="tag mild">Mild</span></div>
+          <p class="variety">Komatsuna</p>
+          <p class="meta">8–12 days · A, C, K · calcium</p>
+          <div class="foot"><span class="price">$5 <small>/ 2 oz</small></span><span class="muted">Late Oct</span></div>
+        </article>
+        <article class="product card reveal" style="--d:.1s">
+          <div class="icon"><img src="assets/sprout-5.png" alt=""></div>
+          <div class="row"><h3>Pak choi</h3><span class="tag mild">Mild</span></div>
+          <p class="variety">Shanghai</p>
+          <p class="meta">8–12 days · A, C, K · calcium, folate</p>
+          <div class="foot"><span class="price">$5 <small>/ 2 oz</small></span><span class="muted">Late Oct</span></div>
+        </article>
+        <article class="product card reveal" style="--d:.15s">
+          <div class="icon"><img src="assets/sprout-6.png" alt=""></div>
+          <div class="row"><h3>Cilantro</h3><span class="tag herby">Herby</span></div>
+          <p class="variety">Slow Bolt</p>
+          <p class="meta">16–21 days · A, C, K · antioxidants</p>
+          <div class="foot"><span class="price">$5 <small>/ 2 oz</small></span><span class="muted">Late Oct</span></div>
+        </article>
+        <article class="product card reveal">
+          <div class="icon"><img src="assets/sprout-4.png" alt=""></div>
+          <div class="row"><h3>Thai basil</h3><span class="tag herby">Herby</span></div>
+          <p class="variety">Basil, Thai type</p>
+          <p class="meta">14–21 days · A, K · antioxidants</p>
+          <div class="foot"><span class="price">$5 <small>/ 2 oz</small></span><span class="muted">Late Oct</span></div>
+        </article>
+        <article class="product card reveal" style="--d:.05s">
+          <div class="icon"><img src="assets/sprout-7.png" alt=""></div>
+          <div class="row"><h3>Onion</h3><span class="tag oniony">Oniony</span></div>
+          <p class="variety">Tokyo Long White</p>
+          <p class="meta">14–21 days · A, C · quercetin</p>
+          <div class="foot"><span class="price">$5 <small>/ 2 oz</small></span><span class="muted">Late Oct</span></div>
+        </article>
+        <article class="product card reveal" style="--d:.1s">
+          <div class="icon"><img src="assets/sprout-2.png" alt=""></div>
+          <div class="row"><h3>Garlic chives</h3><span class="tag oniony">Oniony</span></div>
+          <p class="variety">Chives, garlic type</p>
+          <p class="meta">18–24 days · A, C, K · folate</p>
+          <div class="foot"><span class="price">$5 <small>/ 2 oz</small></span><span class="muted">Late Oct</span></div>
+        </article>
+      </div>
+
+      <h3 class="reveal" style="margin-top:32px">Mixes <span class="muted small">· $5 per 2 oz</span></h3>
+      <div class="mixes">
+        <div class="mix card reveal"><b>Mild</b><span>komatsuna, broccoli, pak choi</span></div>
+        <div class="mix card reveal" style="--d:.05s"><b>Taco</b><span>cilantro, onion, garlic chives</span></div>
+        <div class="mix card reveal" style="--d:.1s"><b>Allium</b><span>garlic chives, onion</span></div>
+        <div class="mix card reveal" style="--d:.15s"><b>Stir-fry</b><span>pak choi, garlic chives, cilantro</span></div>
+        <div class="mix card reveal" style="--d:.2s"><b>Pesto</b><span>Thai basil, broccoli</span></div>
+      </div>
+      <p class="note reveal">Rinse before eating. Keep refrigerated and use within about a week. Mustard and other greens may cause reactions in people with food allergies.</p>
+    </section>
+
+    <section class="section" id="about">
+      <div class="two">
+        <div class="hello card reveal">
+          <div class="face"><img src="assets/sprout-5.png" alt=""></div>
+          <h2>Hi, I'm the grower</h2>
+          <p>I'm a senior studying computer science at Boston University, growing microgreens on the side. I care about eating well in a way that's about more than macros: food that's fresh, colorful and actually tastes good.</p>
+          <p>chibie is my small experiment in making that easy for students and neighbors around Boston. If you're curious, want to help grow, or just want to see how it works, I'd love to hear from you in the <a href="survey.html">survey</a> or at <a href="mailto:sealu@culubo.org">sealu@culubo.org</a>.</p>
+        </div>
+        <div class="timeline card reveal" style="--d:.08s">
+          <h2>Timeline</h2>
+          <ol>
+            <li class="now"><b>Now</b><span>Seeing who's interested: survey and stock-update signups</span></li>
+            <li><b>Oct 6–8</b><span>Seeds arrive, first trays planted</span></li>
+            <li><b>~Oct 17–21</b><span>First fast greens ready: broccoli, komatsuna, pak choi</span></li>
+            <li><b>Late Oct</b><span>Slower herbs ready: cilantro, Thai basil, onion, garlic chives</span></li>
+            <li><b>After that</b><span>First Saturday pickups, announced to the stock-updates list</span></li>
+          </ol>
+          <p class="muted small">Dates are estimates. Plants keep their own schedule.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta card pattern reveal" id="updates">
+      <img class="grow" src="assets/sprouts-strip.png" alt="" width="418" height="90">
+      <div>
+        <h2>Get stock updates</h2>
+        <p class="muted">What's growing and when it's ready. Unsubscribe anytime.</p>
+        <form class="news" id="news">
+          <input type="hidden" name="type" value="newsletter">
+          <input type="hidden" name="_subject" value="New stock updates signup">
+          <input type="email" name="email" placeholder="you@example.com" autocomplete="email" required aria-label="Email">
+          <button class="btn primary" type="submit">Sign up</button>
+        </form>
+        <p class="muted small" id="news-note" style="margin-top:8px"></p>
+      </div>
+      <div class="pickup">
+        <b>Pickup, once we're selling</b>
+        <span>Saturdays, by appointment. Tell us when you're free when you order, and we'll meet you then.</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head reveal"><h2>Maybe later</h2><p class="muted">Varieties we'd like to try next. Tell us in the survey if one catches your eye.</p></div>
+      <div class="later reveal">
+        <span>Kohlrabi</span><span>Chervil</span><span>Alfalfa</span><span>Beet</span>
+        <span class="rare">Agretti</span><span class="rare">Lovage</span><span class="rare">Corn shoots</span><span class="rare">Purslane</span>
+        <span class="rare">Edamame shoots</span><span class="rare">Borage</span><span class="rare">Celery</span><span class="rare">Fennel</span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <a class="brand" href="#top"><b>chibie</b><span>microgreens · Boston</span></a>
+      <a href="how.html">How it's grown</a>
+      <a href="survey.html">Survey</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="mailto:sealu@culubo.org">sealu@culubo.org</a>
     </div>
-  </div>
-  <div class="cols hello">
-  <section>
-  <h2>Hi, I'm the grower</h2>
-  <p class="intro">I'm a senior studying computer science at Boston University, growing microgreens on the side. I care about eating well in a way that's about more than macros: food that's fresh, colorful and actually tastes good. chibie is my small experiment in making that easy for students and neighbors around Boston.</p>
-  <p class="intro">If you're curious, want to help grow, or just want to see how it works, I'd love to hear from you. Say so in the <a href="survey.html">survey</a> or email <a href="mailto:sealu@culubo.org">sealu@culubo.org</a>.</p>
-  </section>
-  <section>
-  <h2>Timeline</h2>
-  <ul class="tl">
-    <li><b>Now</b><span>Seeing who's interested: survey and stock-update signups</span></li>
-    <li><b>Oct 6–8</b><span>Seeds arrive, first trays planted</span></li>
-    <li><b>~Oct 17–21</b><span>First fast greens ready: broccoli, komatsuna, pak choi</span></li>
-    <li><b>Late Oct</b><span>Slower herbs ready: cilantro, Thai basil, onion, garlic chives</span></li>
-    <li><b>After that</b><span>First Saturday pickups, announced to the stock-updates list</span></li>
-  </ul>
-  <p>Dates are estimates. Plants keep their own schedule.</p>
-  </section>
-  </div>
-  <div class="cols">
-  <section>
-  <h2>Varieties · per 2 oz</h2>
-  <ul>
-    <li><span>Cilantro <small>16–21 days · A, C, K · antioxidants</small></span><span>$5</span></li>
-    <li><span>Garlic chives <small>18–24 days · A, C, K · folate</small></span><span>$5</span></li>
-    <li><span>Onion (Tokyo Long White) <small>14–21 days · A, C · quercetin</small></span><span>$5</span></li>
-    <li><span>Broccoli (Calabrese) <small>8–12 days · A, C, K · sulforaphane</small></span><span>$5</span></li>
-    <li><span>Mustard (komatsuna) <small>8–12 days · A, C, K · calcium</small></span><span>$5</span></li>
-    <li><span>Pak choi <small>8–12 days · A, C, K · calcium, folate</small></span><span>$5</span></li>
-    <li><span>Thai basil <small>14–21 days · A, K · antioxidants</small></span><span>$5</span></li>
-  </ul>
-  <p>Vitamin A supports vision and immunity, C supports immunity, and K supports blood clotting and bones. Quercetin and sulforaphane are antioxidant compounds.</p>
-  <p>Rinse before eating. Keep refrigerated and use within about a week. Mustard and other greens may cause reactions in people with food allergies.</p>
-  <h2>Mixes · per 2 oz</h2>
-  <ul>
-    <li><span>Mild <small>komatsuna, broccoli, pak choi</small></span><span>$5</span></li>
-    <li><span>Taco <small>cilantro, onion, garlic chives</small></span><span>$5</span></li>
-    <li><span>Allium <small>garlic chives, onion</small></span><span>$5</span></li>
-    <li><span>Stir-fry <small>pak choi, garlic chives, cilantro</small></span><span>$5</span></li>
-    <li><span>Pesto <small>Thai basil, broccoli</small></span><span>$5</span></li>
-  </ul>
-  <h2>Pickup</h2>
-  <ul>
-    <li><span>Once we're selling: Saturdays, by appointment. Tell us when you're free when you order, and we'll meet you then.</span></li>
-  </ul>
-  <h2>Stock updates</h2>
-  <form class="news" id="news">
-    <input type="hidden" name="type" value="newsletter">
-    <input type="hidden" name="_subject" value="New stock updates signup">
-    <input type="email" name="email" placeholder="you@example.com" autocomplete="email" required aria-label="Email">
-    <button type="submit">Sign up</button>
-  </form>
-  <p id="news-note">What's growing and when it's ready. Unsubscribe anytime.</p>
-  </section>
-  <section>
-  <h2>Why ours</h2>
-  <ul>
-    <li><span>Grown near Boston, MA, so they reach you fresh</span></li>
-    <li><span>Grown indoors in clean coco coir, away from soil, animals and runoff, with no pesticides</span></li>
-    <li><span>Easy greens for students: dining hall meals can be light on fresh vegetables, and a handful on top adds vitamins A, C and K</span></li>
-    <li><span>Only 7% of adults 18–30 eat enough vegetables (<a href="https://www.cdc.gov/mmwr/volumes/71/wr/mm7101a1.htm">CDC</a>, 2019)</span></li>
-    <li><span>By weight, microgreens can hold 4–40× the vitamins of the grown plant (<a href="https://pubmed.ncbi.nlm.nih.gov/22812633/">USDA</a>, 2012)</span></li>
-  </ul>
-  <h2>How they're grown</h2>
-  <ul>
-    <li><span>Zone 6 · Indoors · <a href="https://www.amazon.com/dp/B0BCYMMBR1">Coco coir</a> · True Leaf Market seeds</span></li>
-  </ul>
-  <h2>The trays</h2>
-  <canvas id="tray" aria-label="3D model of one tray module: reservoir, perforated insert and germination cover"></canvas>
-  <ul>
-    <li><span>Designed and 3D-printed in PETG, in 8-inch modules <small>drag to rotate</small></span></li>
-    <li><span>Water reservoir below, perforated growing insert above, blackout cover for germination</span></li>
-    <li><span>40 × 7 × 2.5 in (5 modules) or 24 × 4.5 × 2.5 in (3 modules)</span></li>
-  </ul>
-  <h2>Costs &amp; profit</h2>
-  <ul>
-    <li><span>Spent <small>seeds $58 · coir $11.99 · PETG $12</small></span><span>$81.99</span></li>
-    <li><span>Sales <small>$0.00</small></span><b class="neg">Net −$81.99</b></li>
-  </ul>
-  </section>
-  </div>
-  <section class="soon">
-  <h2>Coming soon</h2>
-  <ul>
-    <li><span>Kohlrabi</span></li>
-    <li><span>Chervil</span></li>
-    <li><span>Alfalfa</span></li>
-    <li><span>Beet</span></li>
-    <li><span>Agretti (monk's beard)</span><small>rare</small></li>
-    <li><span>Lovage</span><small>rare</small></li>
-    <li><span>Corn shoots</span><small>rare</small></li>
-    <li><span>Purslane</span><small>rare</small></li>
-    <li><span>Edamame shoots</span><small>rare</small></li>
-    <li><span>Borage</span><small>rare</small></li>
-    <li><span>Celery</span><small>rare</small></li>
-    <li><span>Fennel</span><small>rare</small></li>
-  </ul>
-  </section>
-  <div class="cta">
-    <img class="cta-sprouts" src="assets/sprouts-strip.png" alt="" width="418" height="90">
-    <h2>Interested?</h2>
-    <p>Tell me what you'd want in the <a href="survey.html">1-minute survey</a>. No signup needed.</p>
-  </div>
-  <p class="foot"><a href="privacy.html">Privacy policy</a></p>
+  </footer>
+
+<script src="assets/site.js"></script>
 <script>
   // Stock-updates signup goes to the same Formspree form as the survey, tagged type=newsletter.
   document.getElementById('news').addEventListener('submit', function (e) {
@@ -199,104 +202,6 @@
       .then(function (r) { if (!r.ok) throw 0; f.hidden = true; note.textContent = "You're on the list. We'll email you when greens are ready."; })
       .catch(function () { btn.disabled = false; note.textContent = "Couldn't sign you up. Please try again."; });
   });
-</script>
-<script>
-(function () {
-  var canvas = document.getElementById('tray');
-  function load(src) {
-    return new Promise(function (ok, fail) {
-      var el = document.createElement('script'); el.src = src; el.onload = ok; el.onerror = fail; document.head.appendChild(el);
-    });
-  }
-  function part(b64, flip) {
-    var bin = atob(b64), bytes = new Uint8Array(bin.length);
-    for (var i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
-    var raw = new Int16Array(bytes.buffer), pos = new Float32Array(raw.length);
-    for (var j = 0; j < raw.length; j++) pos[j] = raw[j] / 100;
-    var g = new THREE.BufferGeometry();
-    g.setAttribute('position', new THREE.BufferAttribute(pos, 3));
-    if (flip) g.rotateX(Math.PI);          // cover is modeled print-side down
-    g.rotateX(-Math.PI / 2);               // STL is Z-up, three.js is Y-up
-    g.computeBoundingBox();
-    var b = g.boundingBox;
-    g.translate(-(b.min.x + b.max.x) / 2, -b.min.y, -(b.min.z + b.max.z) / 2);
-    return g;
-  }
-  // Hard edges, plus (optionally) a single vertical line at the middle of each rounded corner,
-  // instead of one line per facet of the curve.
-  function edges(g, corners) {
-    var hard = new THREE.EdgesGeometry(g, 25), out = Array.from(hard.attributes.position.array);
-    if (!corners) return hard;
-    var key = function (a, i) { return [a[i], a[i + 1], a[i + 2], a[i + 3], a[i + 4], a[i + 5]].map(function (n) { return n.toFixed(2); }).join(); };
-    var seen = {}, h = hard.attributes.position.array, soft = new THREE.EdgesGeometry(g, 1).attributes.position.array;
-    for (var i = 0; i < h.length; i += 6) seen[key(h, i)] = 1;
-    var cols = {};
-    for (var j = 0; j < soft.length; j += 6) {
-      if (seen[key(soft, j)] || Math.abs(soft[j] - soft[j + 3]) > 1e-3 || Math.abs(soft[j + 2] - soft[j + 5]) > 1e-3) continue;
-      var k = soft[j].toFixed(2) + ',' + soft[j + 2].toFixed(2), c = cols[k] || (cols[k] = { x: soft[j], z: soft[j + 2], y0: Infinity, y1: -Infinity });
-      c.y0 = Math.min(c.y0, soft[j + 1], soft[j + 4]); c.y1 = Math.max(c.y1, soft[j + 1], soft[j + 4]);
-    }
-    // group neighbouring facet lines into corners (facets are ~1 mm apart, walls ~2 mm)
-    var pts = Object.keys(cols).map(function (k) { return cols[k]; }), used = [];
-    pts.forEach(function (p0, i0) {
-      if (used[i0]) return;
-      var group = [p0]; used[i0] = 1;
-      for (var q = 0; q < group.length; q++) pts.forEach(function (p, i) {
-        var r = group[q], overlap = Math.min(p.y1, r.y1) - Math.max(p.y0, r.y0);
-        // same corner = adjacent and mostly the same height (keeps short socket-block curves separate)
-        if (!used[i] && Math.hypot(p.x - r.x, p.z - r.z) < 1.4 && overlap > 0.5 * Math.max(p.y1 - p.y0, r.y1 - r.y0)) { used[i] = 1; group.push(p); }
-      });
-      // the arc's middle is the point farthest from the chord between its two ends
-      var a = group[0], b = group[0], best = group[0], far = -1;
-      group.forEach(function (p) { group.forEach(function (r) { if (Math.hypot(p.x - r.x, p.z - r.z) > Math.hypot(a.x - b.x, a.z - b.z)) { a = p; b = r; } }); });
-      var len = Math.hypot(b.x - a.x, b.z - a.z) || 1;
-      group.forEach(function (p) { var d = Math.abs((b.x - a.x) * (a.z - p.z) - (a.x - p.x) * (b.z - a.z)) / len; if (d > far) { far = d; best = p; } });
-      var y0 = Math.min.apply(null, group.map(function (p) { return p.y0; })), y1 = Math.max.apply(null, group.map(function (p) { return p.y1; }));
-      out.push(best.x, y0, best.z, best.x, y1, best.z);
-    });
-    var e = new THREE.BufferGeometry();
-    e.setAttribute('position', new THREE.Float32BufferAttribute(out, 3));
-    return e;
-  }
-  function start() {
-    var css = getComputedStyle(document.documentElement);
-    var ink = new THREE.Color(css.getPropertyValue('--accent').trim());
-    var paper = new THREE.Color(css.getPropertyValue('--bg').trim());
-    var renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
-    renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
-    var scene = new THREE.Scene(), cam = new THREE.OrthographicCamera(-1, 1, 1, -1, -2000, 2000);
-    var fill = new THREE.MeshBasicMaterial({ color: paper, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 });
-    var line = new THREE.LineBasicMaterial({ color: ink });
-    var P = window.TRAY_PARTS, stack = [[P.outer, false, 0, true], [P.insert, false, 95, false], [P.cover, true, 195, true]]; // last value: add one line per rounded corner
-    var group = new THREE.Group();
-    stack.forEach(function (s) {
-      var g = part(s[0], s[1]), m = new THREE.Mesh(g, fill), e = new THREE.LineSegments(edges(g, s[3]), line);
-      m.position.y = e.position.y = s[2];
-      group.add(m, e);
-    });
-    group.position.y = -100;
-    scene.add(group);
-    cam.position.set(260, 180, 260); cam.lookAt(0, 0, 0);
-    var controls = new THREE.OrbitControls(cam, canvas);
-    controls.enableZoom = false; controls.enablePan = false; controls.autoRotate = true; controls.autoRotateSpeed = 1.2; controls.enableDamping = true;
-    function size() {
-      var w = canvas.clientWidth, h = canvas.clientHeight, half = 140;
-      renderer.setSize(w, h, false);
-      cam.left = -half * w / h; cam.right = half * w / h; cam.top = half; cam.bottom = -half; cam.updateProjectionMatrix();
-    }
-    new ResizeObserver(size).observe(canvas); size();
-    (function tick() { controls.update(); renderer.render(scene, cam); requestAnimationFrame(tick); })();
-  }
-  new IntersectionObserver(function (entries, obs) {
-    if (!entries[0].isIntersecting) return;
-    obs.disconnect();
-    load('https://cdn.jsdelivr.net/npm/three@0.147.0/build/three.min.js')
-      .then(function () { return load('https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/controls/OrbitControls.js'); })
-      .then(function () { return load('assets/trays.js'); })
-      .then(start)
-      .catch(function () { canvas.style.display = 'none'; });
-  }, { rootMargin: '200px' }).observe(canvas);
-})();
 </script>
 </body>
 </html>

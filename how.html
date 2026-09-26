@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How it's grown · chibie</title>
+<link rel="icon" type="image/gif" href="favicon.gif">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..400,100,0;1,9..144,300..400,100,0&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+  .page-head { padding:40px 0 8px; }
+  .page-head h1 { font-weight:300; font-size:48px; line-height:1.05; font-variation-settings:'opsz' 144, 'SOFT' 100, 'WONK' 0; }
+  .page-head p { font-size:17px; margin-top:10px; max-width:560px; }
+  .panel { padding:26px; }
+  .panel h2 { margin-bottom:12px; }
+  .specs { list-style:none; padding:0; }
+  .specs li { display:flex; justify-content:space-between; gap:16px; padding:9px 0; border-bottom:1px solid var(--line); font-size:14px; }
+  .specs li:last-child { border-bottom:0; }
+  .specs li span:first-child { color:var(--muted); }
+  .specs li span:last-child { text-align:right; }
+  #tray { display:block; width:100%; height:300px; cursor:grab; touch-action:pan-y; }
+  .money { display:grid; grid-template-columns:repeat(3, 1fr); gap:10px; margin-top:6px; }
+  .money div { background:var(--tint); border-radius:12px; padding:14px; }
+  .money b { display:block; font:300 30px/1.1 'Fraunces', Georgia, serif; font-variation-settings:'opsz' 144, 'SOFT' 100, 'WONK' 0; color:var(--accent); }
+  .money .neg b { color:var(--neg); }
+  .money span { font-size:13px; color:var(--muted); }
+  .stack { display:grid; gap:14px; }
+</style>
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="wrap">
+      <a class="brand" href="index.html"><b>chibie</b><span>microgreens</span><img src="assets/sprouts-strip.png" alt=""></a>
+      <div class="links">
+        <a href="index.html#growing">Growing</a>
+        <a href="index.html#about">About</a>
+        <a href="how.html">How it's grown</a>
+        <a class="btn primary sm" href="survey.html">Survey</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <header class="page-head reveal">
+      <h1>How it's grown</h1>
+      <p class="muted">The behind-the-scenes version: where the seeds come from, the trays I designed, and what it's cost so far.</p>
+    </header>
+
+    <section class="section" style="padding-top:24px">
+      <div class="two">
+        <div class="panel card reveal">
+          <h2>The setup</h2>
+          <ul class="specs">
+            <li><span>Where</span><span>Indoors, near Boston (zone 6)</span></li>
+            <li><span>Growing medium</span><span><a href="https://www.amazon.com/dp/B0BCYMMBR1">Coco coir</a></span></li>
+            <li><span>Seeds</span><span>True Leaf Market</span></li>
+            <li><span>Pesticides</span><span>None</span></li>
+            <li><span>Harvest</span><span>Cut above the root, 8–24 days after planting</span></li>
+          </ul>
+        </div>
+        <div class="panel card reveal" style="--d:.08s">
+          <h2>What's in them</h2>
+          <ul class="specs">
+            <li><span>Vitamin A</span><span>Vision and immunity</span></li>
+            <li><span>Vitamin C</span><span>Immunity</span></li>
+            <li><span>Vitamin K</span><span>Blood clotting and bones</span></li>
+            <li><span>Quercetin, sulforaphane</span><span>Antioxidant compounds</span></li>
+          </ul>
+          <p class="muted small" style="margin-top:10px">Per-variety details are on the <a href="index.html#growing">growing</a> cards.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="two">
+        <div class="panel card reveal">
+          <h2>The trays</h2>
+          <canvas id="tray" aria-label="3D model of one tray module: reservoir, perforated insert and germination cover"></canvas>
+          <p class="muted small" style="text-align:center">Drag to rotate</p>
+        </div>
+        <div class="stack">
+          <div class="panel card reveal" style="--d:.08s">
+            <h2>Designed and 3D-printed</h2>
+            <ul class="specs">
+              <li><span>Material</span><span>PETG, printed in 8-inch modules</span></li>
+              <li><span>Layers</span><span>Water reservoir, perforated growing insert, blackout cover</span></li>
+              <li><span>Long tray</span><span>40 × 7 × 2.5 in (5 modules)</span></li>
+              <li><span>Short tray</span><span>24 × 4.5 × 2.5 in (3 modules)</span></li>
+            </ul>
+          </div>
+          <div class="panel card reveal" style="--d:.16s">
+            <h2>Costs &amp; profit</h2>
+            <div class="money">
+              <div><b>$81.99</b><span>spent: seeds $58, coir $11.99, PETG $12</span></div>
+              <div><b>$0</b><span>sales so far</span></div>
+              <div class="neg"><b>−$81.99</b><span>net</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <a class="brand" href="index.html"><b>chibie</b><span>microgreens · Boston</span></a>
+      <a href="index.html">Home</a>
+      <a href="survey.html">Survey</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="mailto:sealu@culubo.org">sealu@culubo.org</a>
+    </div>
+  </footer>
+
+<script src="assets/site.js"></script>
+<script src="assets/tray-viewer.js"></script>
+</body>
+</html>
