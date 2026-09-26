@@ -46,6 +46,7 @@
   <p class="sub">About a minute. Helps us decide what to grow, what to charge and where to meet you.</p>
 
   <form id="survey">
+    <input type="hidden" name="from" id="from">
     <fieldset>
       <legend>Which fits you best?</legend>
       <div class="chips">
@@ -167,6 +168,9 @@
   var ENDPOINT = '';
 
   var form = document.getElementById('survey'), done = document.getElementById('done');
+  // Which poster/link sent them here: survey.html?from=library
+  var from = (new URLSearchParams(location.search).get('from') || 'direct').toLowerCase().replace(/[^a-z0-9-]/g, '').slice(0, 40);
+  document.getElementById('from').value = from || 'direct';
   form.addEventListener('change', function () {
     document.getElementById('biz').hidden = form.who.value !== 'restaurant or cafe';
   });
