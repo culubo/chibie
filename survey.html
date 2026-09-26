@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Survey · Microgreens</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..400,100,0&display=swap" rel="stylesheet">
+<style>
+  :root { --fg:#1c1f1a; --muted:#6b7064; --line:#e3e5df; --bg:#fbfbf8; --accent:#3f7d2c; --tint:#eaf2e4; }
+  @media (prefers-color-scheme: dark) {
+    :root { --fg:#e8eae4; --muted:#9a9f93; --line:#2c2f29; --bg:#141612; --accent:#8cc46f; --tint:#1f2a1a; }
+  }
+  * { box-sizing:border-box; margin:0; }
+  body { font:14px/1.45 system-ui,sans-serif; color:var(--fg); background:var(--bg); max-width:640px; margin:0 auto; padding:24px 16px 48px; }
+  a { color:inherit; }
+  .back { display:inline-block; margin-bottom:16px; color:var(--muted); font-size:12px; }
+  h1 { font:300 26px/1.1 'Fraunces', Georgia, serif; font-variation-settings:'opsz' 144, 'SOFT' 100, 'WONK' 0; color:var(--accent); margin-bottom:4px; }
+  .sub { color:var(--muted); margin-bottom:8px; }
+  fieldset { border:0; padding:0; margin:0; border-top:1px solid var(--line); padding-top:14px; margin-top:14px; }
+  legend { font:400 17px/1.25 'Fraunces', Georgia, serif; font-variation-settings:'SOFT' 100, 'WONK' 0; color:var(--accent); padding:0; margin-bottom:8px; float:left; width:100%; }
+  legend + * { clear:both; }
+  legend small { font:12px system-ui,sans-serif; color:var(--muted); margin-left:4px; }
+  .chips { display:flex; flex-wrap:wrap; gap:6px; }
+  .chips label { position:relative; }
+  .chips input { position:absolute; opacity:0; pointer-events:none; }
+  .chips span { display:inline-block; padding:6px 12px; border:1px solid var(--line); border-radius:999px; cursor:pointer; user-select:none; }
+  .chips span small { color:var(--muted); font-size:12px; }
+  .chips input:checked + span { border-color:var(--accent); background:var(--tint); color:var(--accent); }
+  .chips input:focus-visible + span { outline:2px solid var(--accent); outline-offset:2px; }
+  input[type=text], input[type=email], textarea { width:100%; font:inherit; color:inherit; background:transparent; border:1px solid var(--line); border-radius:6px; padding:8px 10px; }
+  input:focus, textarea:focus { outline:2px solid var(--accent); outline-offset:-1px; border-color:transparent; }
+  textarea { min-height:70px; resize:vertical; }
+  .note { color:var(--muted); font-size:12px; margin-top:6px; }
+  .note[hidden] { display:none; }
+  button { margin-top:20px; font:inherit; font-weight:600; color:var(--bg); background:var(--accent); border:0; border-radius:999px; padding:10px 22px; cursor:pointer; }
+  button:disabled { opacity:.5; cursor:default; }
+  #done { margin-top:20px; }
+</style>
+</head>
+<body>
+  <a class="back" href="index.html">← Back to microgreens</a>
+  <h1>Would you eat microgreens?</h1>
+  <p class="sub">About a minute. Helps us decide what to grow, what to charge and where to meet you.</p>
+
+  <form id="survey">
+    <fieldset>
+      <legend>Which fits you best?</legend>
+      <div class="chips">
+        <label><input type="radio" name="who" value="college student" required><span>College student</span></label>
+        <label><input type="radio" name="who" value="young professional"><span>Working / young adult</span></label>
+        <label><input type="radio" name="who" value="home cook"><span>Home cook / family</span></label>
+        <label><input type="radio" name="who" value="restaurant or cafe"><span>Restaurant or café</span></label>
+        <label><input type="radio" name="who" value="other"><span>Other</span></label>
+      </div>
+      <p class="note" id="biz" hidden>We'd rather talk in person. Email <a href="mailto:sealu@culubo.org">sealu@culubo.org</a> and we'll bring samples. You can still answer below.</p>
+    </fieldset>
+
+    <fieldset>
+      <legend>Have you eaten microgreens before?</legend>
+      <div class="chips">
+        <label><input type="radio" name="tried" value="regularly"><span>Yes, regularly</span></label>
+        <label><input type="radio" name="tried" value="a few times"><span>A few times</span></label>
+        <label><input type="radio" name="tried" value="no"><span>No</span></label>
+        <label><input type="radio" name="tried" value="not sure"><span>Not sure what they are</span></label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>How often do you make your own meals?</legend>
+      <div class="chips">
+        <label><input type="radio" name="cook" value="daily"><span>Daily</span></label>
+        <label><input type="radio" name="cook" value="few times a week"><span>A few times a week</span></label>
+        <label><input type="radio" name="cook" value="rarely"><span>Rarely</span></label>
+        <label><input type="radio" name="cook" value="mostly dining hall"><span>Mostly dining hall</span></label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Where would you use them? <small>pick any</small></legend>
+      <div class="chips">
+        <label><input type="checkbox" name="use" value="sandwiches"><span>Sandwiches & wraps</span></label>
+        <label><input type="checkbox" name="use" value="salads"><span>Salads</span></label>
+        <label><input type="checkbox" name="use" value="eggs toast"><span>Eggs & toast</span></label>
+        <label><input type="checkbox" name="use" value="ramen noodles"><span>Ramen & noodles</span></label>
+        <label><input type="checkbox" name="use" value="bowls"><span>Rice & grain bowls</span></label>
+        <label><input type="checkbox" name="use" value="tacos"><span>Tacos</span></label>
+        <label><input type="checkbox" name="use" value="smoothies"><span>Smoothies</span></label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Which sound good? <small>pick any</small></legend>
+      <div class="chips">
+        <label><input type="checkbox" name="flavor" value="mild"><span>Mild <small>broccoli, pak choi, komatsuna</small></span></label>
+        <label><input type="checkbox" name="flavor" value="herby"><span>Herby <small>Thai basil, cilantro</small></span></label>
+        <label><input type="checkbox" name="flavor" value="oniony"><span>Oniony <small>garlic chives, onion</small></span></label>
+        <label><input type="checkbox" name="flavor" value="mixes"><span>Mixes</span></label>
+        <label><input type="checkbox" name="flavor" value="rare"><span>Something rarer <small>lovage, fennel…</small></span></label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Most you'd pay for a 2 oz pack?</legend>
+      <div class="chips">
+        <label><input type="radio" name="price" value="under 3"><span>Under $3</span></label>
+        <label><input type="radio" name="price" value="3-4"><span>$3–4</span></label>
+        <label><input type="radio" name="price" value="4-5"><span>$4–5</span></label>
+        <label><input type="radio" name="price" value="5-6"><span>$5–6</span></label>
+        <label><input type="radio" name="price" value="6+"><span>$6+</span></label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>How would you want them?</legend>
+      <div class="chips">
+        <label><input type="radio" name="format" value="cut"><span>Cut, ready to eat</span></label>
+        <label><input type="radio" name="format" value="grow kit"><span>Grow kit, grow my own</span></label>
+        <label><input type="radio" name="format" value="both"><span>Both</span></label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>How would you get them? <small>pick any</small></legend>
+      <div class="chips">
+        <label><input type="checkbox" name="get" value="saturday pickup"><span>Saturday pickup</span></label>
+        <label><input type="checkbox" name="get" value="delivery with fee"><span>Delivery, I'd pay a fee</span></label>
+        <label><input type="checkbox" name="get" value="campus"><span>On campus</span></label>
+        <label><input type="checkbox" name="get" value="local shop"><span>At a café or shop near me</span></label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>How often would you buy?</legend>
+      <div class="chips">
+        <label><input type="radio" name="often" value="weekly"><span>Weekly</span></label>
+        <label><input type="radio" name="often" value="every 2 weeks"><span>Every 2 weeks</span></label>
+        <label><input type="radio" name="often" value="monthly"><span>Monthly</span></label>
+        <label><input type="radio" name="often" value="just to try"><span>Just to try</span></label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Neighborhood or school <small>optional</small></legend>
+      <input type="text" name="area" placeholder="e.g. Allston, Northeastern" autocomplete="off">
+    </fieldset>
+
+    <fieldset>
+      <legend>Email, if you want to hear when we launch <small>optional</small></legend>
+      <input type="email" name="email" placeholder="you@example.com" autocomplete="email">
+      <p class="note">Only used to tell you when we launch. See our <a href="privacy.html">privacy policy</a>.</p>
+    </fieldset>
+
+    <fieldset>
+      <legend>Anything else? <small>optional</small></legend>
+      <textarea name="notes"></textarea>
+    </fieldset>
+
+    <button type="submit">Send</button>
+  </form>
+  <p id="done" hidden></p>
+
+<script>
+  // Where responses go. Paste a form endpoint here (e.g. Formspree: https://formspree.io/f/xxxxxx).
+  var ENDPOINT = '';
+
+  var form = document.getElementById('survey'), done = document.getElementById('done');
+  form.addEventListener('change', function () {
+    document.getElementById('biz').hidden = form.who.value !== 'restaurant or cafe';
+  });
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var btn = form.querySelector('button');
+    function finish(msg) { form.hidden = true; done.hidden = false; done.textContent = msg; }
+    if (!ENDPOINT) return finish("Thanks! (This survey isn't connected yet, so this response wasn't saved.)");
+    btn.disabled = true;
+    fetch(ENDPOINT, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } })
+      .then(function (r) { if (!r.ok) throw 0; finish('Thanks! That really helps.'); })
+      .catch(function () { btn.disabled = false; alert("Couldn't send. Please try again."); });
+  });
+</script>
+</body>
+</html>
