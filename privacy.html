@@ -7,27 +7,32 @@
 <link rel="icon" type="image/gif" href="favicon.gif">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..400,100,0&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..400,100,0;1,9..144,300..400,100,0&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
 <style>
-  :root { --fg:#1c1f1a; --muted:#6b7064; --line:#e3e5df; --bg:#fbfbf8; --accent:#3f7d2c; }
-  @media (prefers-color-scheme: dark) {
-    :root { --fg:#e8eae4; --muted:#9a9f93; --line:#2c2f29; --bg:#141612; --accent:#8cc46f; }
-  }
-  * { box-sizing:border-box; margin:0; }
-  body { font:14px/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); max-width:640px; margin:0 auto; padding:24px 16px 48px; }
-  h1 { font:300 26px/1.1 'Fraunces', Georgia, serif; font-variation-settings:'opsz' 144, 'SOFT' 100, 'WONK' 0; color:var(--accent); margin-bottom:4px; }
-  h2 { font:400 18px/1.2 'Fraunces', Georgia, serif; font-variation-settings:'SOFT' 100, 'WONK' 0; color:var(--accent); margin:24px 0 6px; }
-  p, li { margin-bottom:6px; }
-  ul { padding-left:18px; }
-  a { color:inherit; }
-  .muted { color:var(--muted); font-size:12px; }
-  .back { display:inline-block; margin-bottom:16px; color:var(--muted); font-size:12px; }
+  .narrow { max-width:680px; }
+  .page-head { padding:40px 0 4px; }
+  .page-head h1 { font-weight:300; font-size:44px; line-height:1.05; font-variation-settings:'opsz' 144, 'SOFT' 100, 'WONK' 0; }
+  .narrow h2 { font-size:21px; margin:32px 0 8px; padding-top:20px; border-top:1px solid var(--line); }
+  .narrow p, .narrow li { margin-bottom:8px; }
+  .narrow ul { padding-left:18px; }
 </style>
+<script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
-  <a class="back" href="index.html">← Back to chibie</a>
-  <h1>Privacy policy</h1>
-  <p class="muted">Effective September 26, 2026</p>
+  <nav class="nav">
+    <div class="wrap">
+      <a class="brand" href="index.html"><b>chibie</b><span>microgreens</span><img src="assets/sprouts-strip.png" alt=""></a>
+      <div class="links">
+        <a href="index.html#growing">Growing</a>
+        <a href="index.html#about">About</a>
+        <a href="how.html">How it's grown</a>
+        <a class="btn primary sm" href="survey.html">Survey</a>
+      </div>
+    </div>
+  </nav>
+  <main class="wrap narrow">
+  <header class="page-head"><h1>Privacy policy</h1><p class="muted small" style="margin-top:8px">Effective September 26, 2026</p></header>
 
   <h2>Who we are</h2>
   <p>chibie is a small, home-based microgreens grower near Boston, MA. Questions about this policy or your information: <a href="mailto:sealu@culubo.org">sealu@culubo.org</a>.</p>
@@ -70,5 +75,17 @@
 
   <h2>Changes</h2>
   <p>If we change this policy, we'll update it here and change the date at the top.</p>
-</body>
+
+  </main>
+  <footer class="footer">
+    <div class="wrap">
+      <a class="brand" href="index.html"><b>chibie</b><span>microgreens · Boston</span></a>
+      <a href="index.html">Home</a>
+      <a href="how.html">How it's grown</a>
+      <a href="survey.html">Survey</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="mailto:sealu@culubo.org">sealu@culubo.org</a>
+    </div>
+  </footer>
+<script src="assets/site.js"></script></body>
 </html>
