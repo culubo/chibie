@@ -16,6 +16,7 @@
   .strip { position:relative; margin:28px 0 40px; height:180px; border-radius:22px; background:url(assets/leaves.webp) center 40% / cover; }
   .strip .sandwich { position:absolute; right:4%; bottom:-44px; width:min(30%, 260px); height:auto; transform:rotate(5deg); filter:drop-shadow(0 12px 18px rgba(30,40,20,.22)); }
   #tray { display:block; width:100%; height:320px; cursor:grab; touch-action:pan-y; }
+  @media (min-width:761px) { .trays { grid-template-columns:1.4fr 1fr; } #tray { height:480px; } }
   .money .big.neg { color:var(--neg); }
   @media (max-width:760px) { .page-head h1 { font-size:34px; } .strip { height:130px; } .strip .sandwich { width:44%; bottom:-34px; } }
 </style>
@@ -78,7 +79,7 @@
     </section>
 
     <section class="section">
-      <div class="two" style="align-items:center">
+      <div class="two trays" style="align-items:center">
         <div class="reveal">
           <canvas id="tray" aria-label="3D model of one tray module: reservoir, perforated insert and germination cover"></canvas>
           <p class="muted small" style="text-align:center">Drag to rotate</p>
